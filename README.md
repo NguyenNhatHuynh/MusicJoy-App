@@ -50,10 +50,10 @@ Follow the on-screen instructions to sign in or sign up to start using MusicJoy.
 - User Profile management including displaying and removing favorite songs
 
 ## ✅ Todo
-- [ ] Design
-- [ ] Project Structure
+- [x] Design
+- [x] Project Structure
 - [ ] Theme Of Application
-- [ ] Assets / Fonts
+- [x] Assets / Fonts
 - [ ] Splash Page
 - [ ] Get Started Page
 - [ ] Choose Light-Dark Mode Page
