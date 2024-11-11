@@ -52,7 +52,7 @@ Follow the on-screen instructions to sign in or sign up to start using MusicJoy.
 ## ✅ Todo
 - [x] Design
 - [x] Project Structure
-- [ ] Theme Of Application
+- [x] Theme Of Application
 - [x] Assets / Fonts
 - [ ] Splash Page
 - [ ] Get Started Page
