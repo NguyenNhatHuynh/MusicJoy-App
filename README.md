@@ -54,8 +54,8 @@ Follow the on-screen instructions to sign in or sign up to start using MusicJoy.
 - [x] Project Structure
 - [x] Theme Of Application
 - [x] Assets / Fonts
-- [ ] Splash Page
-- [ ] Get Started Page
+- [x] Splash Page
+- [x] Get Started Page
 - [ ] Choose Light-Dark Mode Page
 - [ ] Logic Of Light-Dark Mode
 - [ ] Signin Or Signup Page
