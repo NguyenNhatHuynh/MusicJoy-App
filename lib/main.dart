@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:musicjoy/presentation/splash/pages/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Container(),
+      debugShowCheckedModeBanner: false,
+      home: const SplashPage(),
     );
   }
 }
