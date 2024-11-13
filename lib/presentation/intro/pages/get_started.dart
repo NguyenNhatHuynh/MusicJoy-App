@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:musicjoy/common/widgets/button/basic_app_button.dart';
 import 'package:musicjoy/core/configs/assets/app_images.dart';
 import 'package:musicjoy/core/configs/assets/app_vectors.dart';
 import 'package:musicjoy/core/configs/theme/app_colors.dart';
@@ -40,7 +41,7 @@ class GetStartedPage extends StatelessWidget {
                     fontSize: 18,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 21,
                 ),
                 Text(
@@ -51,6 +52,13 @@ class GetStartedPage extends StatelessWidget {
                     fontSize: 13,
                   ),
                   textAlign: TextAlign.center,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                BasicAppButton(
+                  onPressed: () {},
+                  title: 'Get Started',
                 )
               ],
             ),
