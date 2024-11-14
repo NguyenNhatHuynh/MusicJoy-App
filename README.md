@@ -56,7 +56,7 @@ Follow the on-screen instructions to sign in or sign up to start using MusicJoy.
 - [x] Assets / Fonts
 - [x] Splash Page
 - [x] Get Started Page
-- [ ] Choose Light-Dark Mode Page
+- [x] Choose Light-Dark Mode Page
 - [ ] Logic Of Light-Dark Mode
 - [ ] Signin Or Signup Page
 - [ ] Firebase Setup
