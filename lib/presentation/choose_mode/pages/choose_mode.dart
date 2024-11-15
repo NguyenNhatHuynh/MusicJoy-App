@@ -56,40 +56,66 @@ class ChooseModePage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    ClipOval(
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                        child: Container(
-                          height: 80,
-                          width: 80,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Color(0xff30393C).withOpacity(0.5),
-                          ),
-                          child: SvgPicture.asset(
-                            AppVectors.moon,
-                            fit: BoxFit.none,
+                    Column(
+                      children: [
+                        ClipOval(
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                            child: Container(
+                              height: 80,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Color(0xff30393C).withOpacity(0.5),
+                              ),
+                              child: SvgPicture.asset(
+                                AppVectors.moon,
+                                fit: BoxFit.none,
+                              ),
+                            ),
                           ),
                         ),
-                      ),
+                        SizedBox(height: 15),
+                        Text(
+                          'Dark Mode',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 17,
+                            color: AppColors.grey,
+                          ),
+                        ),
+                      ],
                     ),
                     SizedBox(width: 40),
-                    ClipOval(
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                        child: Container(
-                          height: 80,
-                          width: 80,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Color(0xff30393C).withOpacity(0.5),
-                          ),
-                          child: SvgPicture.asset(
-                            AppVectors.sun,
-                            fit: BoxFit.none,
+                    Column(
+                      children: [
+                        ClipOval(
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                            child: Container(
+                              height: 80,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Color(0xff30393C).withOpacity(0.5),
+                              ),
+                              child: SvgPicture.asset(
+                                AppVectors.sun,
+                                fit: BoxFit.none,
+                              ),
+                            ),
                           ),
                         ),
-                      ),
+                        SizedBox(height: 15),
+                        Text(
+                          'Ligth Mode',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 17,
+                            color: AppColors.grey,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -116,7 +142,7 @@ class ChooseModePage extends StatelessWidget {
                       ),
                     );
                   },
-                  title: 'Get Started',
+                  title: 'Continue',
                 )
               ],
             ),
