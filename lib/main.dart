@@ -1,6 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:musicjoy/core/configs/theme/app_theme.dart';
+import 'package:musicjoy/presentation/choose_mode/bloc/theme_cubit.dart';
 import 'package:musicjoy/presentation/splash/pages/splash.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -19,12 +22,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+    return MultiBlocProvider(
+      providers: [BlocProvider(create: (_) => ThemeCubit())],
+      child: BlocBuilder<ThemeCubit, ThemeMode>(
+        builder: (context, mode) => MaterialApp(
+          theme: AppTheme.lightTheme,
+          darkTheme: AppTheme.darkTheme,
+          themeMode: mode,
+          debugShowCheckedModeBanner: false,
+          home: const SplashPage(),
+        ),
       ),
-      debugShowCheckedModeBanner: false,
-      home: const SplashPage(),
     );
   }
 }
