@@ -7,6 +7,7 @@ import 'package:musicjoy/common/widgets/button/basic_app_button.dart';
 import 'package:musicjoy/core/configs/assets/app_images.dart';
 import 'package:musicjoy/core/configs/assets/app_vectors.dart';
 import 'package:musicjoy/core/configs/theme/app_colors.dart';
+import 'package:musicjoy/presentation/auth/pages/signup_or_signin.dart';
 import 'package:musicjoy/presentation/choose_mode/bloc/theme_cubit.dart';
 
 class ChooseModePage extends StatelessWidget {
@@ -156,7 +157,7 @@ class ChooseModePage extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (BuildContext context) =>
-                            const ChooseModePage(),
+                            const SignupOrSigninPage(),
                       ),
                     );
                   },
