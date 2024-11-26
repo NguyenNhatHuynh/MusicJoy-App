@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:musicjoy/common/widgets/appbar/app_bar.dart';
+import 'package:musicjoy/common/widgets/button/basic_app_button.dart';
 import 'package:musicjoy/core/configs/assets/app_vectors.dart';
 
 class SignupPage extends StatelessWidget {
@@ -25,7 +26,16 @@ class SignupPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               _registerText(),
-              _fullNameField(),
+              const SizedBox(height: 50),
+              _fullNameField(context),
+              const SizedBox(height: 20),
+              _emailField(context),
+              const SizedBox(height: 20),
+              _passwordField(context),
+              BasicAppButton(
+                onPressed: () {},
+                title: 'Create Account',
+              )
             ],
           ),
         ));
@@ -41,9 +51,24 @@ class SignupPage extends StatelessWidget {
     );
   }
 
-  Widget _fullNameField() {
+  Widget _fullNameField(BuildContext context) {
     return TextField(
-      decoration: InputDecoration(filled: true),
+      decoration: const InputDecoration(hintText: 'Full Name')
+          .applyDefaults(Theme.of(context).inputDecorationTheme),
+    );
+  }
+
+  Widget _emailField(BuildContext context) {
+    return TextField(
+      decoration: const InputDecoration(hintText: 'Enter Email')
+          .applyDefaults(Theme.of(context).inputDecorationTheme),
+    );
+  }
+
+  Widget _passwordField(BuildContext context) {
+    return TextField(
+      decoration: const InputDecoration(hintText: 'Password')
+          .applyDefaults(Theme.of(context).inputDecorationTheme),
     );
   }
 }
