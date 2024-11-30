@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "758875705077",
+    "project_id": "musicjoyapp",
+    "storage_bucket": "musicjoyapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:758875705077:android:5b82f552a86151d6a57fbc",
+        "android_client_info": {
+          "package_name": "com.example.musicjoy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRlgDPX9STLjmTCL1nPelN7P5GOXq_OCA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
