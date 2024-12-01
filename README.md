@@ -57,10 +57,10 @@ Follow the on-screen instructions to sign in or sign up to start using MusicJoy.
 - [x] Splash Page
 - [x] Get Started Page
 - [x] Choose Light-Dark Mode Page
-- [ ] Logic Of Light-Dark Mode
-- [ ] Signin Or Signup Page
-- [ ] Firebase Setup
-- [ ] Logic Of Authentication
+- [x] Logic Of Light-Dark Mode
+- [x] Signin Or Signup Page
+- [x] Firebase Setup
+- [x] Logic Of Authentication
 - [ ] Service Locator
 - [ ] UseCases Setup - Calling Signin / Signup UseCases
 - [ ] Upload Songs To FireStorage
