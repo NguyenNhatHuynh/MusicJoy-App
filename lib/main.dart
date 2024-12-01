@@ -7,6 +7,7 @@ import 'package:musicjoy/core/configs/theme/app_theme.dart';
 import 'package:musicjoy/firebase_options.dart';
 import 'package:musicjoy/presentation/choose_mode/bloc/theme_cubit.dart';
 import 'package:musicjoy/presentation/splash/pages/splash.dart';
+import 'package:musicjoy/service_locator.dart';
 import 'package:path_provider/path_provider.dart';
 
 Future<void> main() async {
@@ -16,7 +17,9 @@ Future<void> main() async {
         ? HydratedStorage.webStorageDirectory
         : await getApplicationDocumentsDirectory(),
   );
+
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await initializeDependencies();
   runApp(const MyApp());
 }
 
