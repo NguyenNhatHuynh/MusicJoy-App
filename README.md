@@ -61,8 +61,8 @@ Follow the on-screen instructions to sign in or sign up to start using MusicJoy.
 - [x] Signin Or Signup Page
 - [x] Firebase Setup
 - [x] Logic Of Authentication
-- [ ] Service Locator
-- [ ] UseCases Setup - Calling Signin / Signup UseCases
+- [x] Service Locator
+- [x] UseCases Setup - Calling Signin / Signup UseCases
 - [ ] Upload Songs To FireStorage
 - [ ] Cloud FireStore Collections
 - [ ] Adding Information Of User To FireStore Collection
