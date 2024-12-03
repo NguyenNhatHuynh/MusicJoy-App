@@ -60,7 +60,7 @@ class SignupOrSigninPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 55,
+                    height: 21,
                   ),
                   const Text(
                     'Spotify is a proprietary Swedish audio streaming and media services provider',
@@ -83,8 +83,7 @@ class SignupOrSigninPage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    const SigninPage(),
+                                builder: (BuildContext context) => SignupPage(),
                               ),
                             );
                           },
@@ -95,7 +94,14 @@ class SignupOrSigninPage extends StatelessWidget {
                       Expanded(
                         flex: 1,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => SigninPage(),
+                              ),
+                            );
+                          },
                           child: Text(
                             'Sign in',
                             style: TextStyle(

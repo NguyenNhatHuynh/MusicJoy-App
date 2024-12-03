@@ -3,57 +3,90 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:musicjoy/common/widgets/appbar/app_bar.dart';
 import 'package:musicjoy/common/widgets/button/basic_app_button.dart';
 import 'package:musicjoy/core/configs/assets/app_vectors.dart';
+import 'package:musicjoy/data/models/auth/create_user_req.dart';
+import 'package:musicjoy/domain/usecases/auth/signup.dart';
+import 'package:musicjoy/presentation/auth/pages/sigin.dart';
+import 'package:musicjoy/presentation/root/pages/root.dart';
+import 'package:musicjoy/service_locator.dart';
 
 class SignupPage extends StatelessWidget {
-  const SignupPage({super.key});
+  SignupPage({super.key});
+  final TextEditingController _fullName = TextEditingController();
+  final TextEditingController _email = TextEditingController();
+  final TextEditingController _password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: _signinText(context),
-        appBar: BasicAppBar(
-          title: SvgPicture.asset(
-            AppVectors.logo,
-            height: 40,
-            width: 40,
-          ),
+      bottomNavigationBar: _signinText(context),
+      appBar: BasicAppBar(
+        title: SvgPicture.asset(
+          AppVectors.logo,
+          height: 40,
+          width: 40,
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: 50,
-            horizontal: 30,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              _registerText(),
-              const SizedBox(height: 50),
-              _fullNameField(context),
-              const SizedBox(height: 20),
-              _emailField(context),
-              const SizedBox(height: 20),
-              _passwordField(context),
-              BasicAppButton(
-                onPressed: () {},
-                title: 'Create Account',
-              )
-            ],
-          ),
-        ));
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(
+          vertical: 50,
+          horizontal: 30,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            _registerText(),
+            const SizedBox(height: 50),
+            _fullNameField(context),
+            const SizedBox(height: 20),
+            _emailField(context),
+            const SizedBox(height: 20),
+            _passwordField(context),
+            BasicAppButton(
+              onPressed: () async {
+                var result = await sl<SignupUseCase>().call(
+                  params: CreateUserReq(
+                    fullName: _fullName.text.toString(),
+                    email: _email.text.toString(),
+                    password: _password.text.toString(),
+                  ),
+                );
+                result.fold(
+                  (l) {
+                    var snackbar = SnackBar(
+                      content: Text(l),
+                      behavior: SnackBarBehavior.floating,
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(snackbar);
+                  },
+                  (r) {
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => const HomePage(),
+                        ),
+                        (route) => false);
+                  },
+                );
+              },
+              title: 'Create Account',
+            )
+          ],
+        ),
+      ),
+    );
   }
 
   Widget _registerText() {
-    return Text(
+    return const Text(
       'Register',
-      style: TextStyle(
-        fontWeight: FontWeight.bold,
-        fontSize: 25,
-      ),
+      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+      textAlign: TextAlign.center,
     );
   }
 
   Widget _fullNameField(BuildContext context) {
     return TextField(
+      controller: _fullName,
       decoration: const InputDecoration(hintText: 'Full Name')
           .applyDefaults(Theme.of(context).inputDecorationTheme),
     );
@@ -61,6 +94,7 @@ class SignupPage extends StatelessWidget {
 
   Widget _emailField(BuildContext context) {
     return TextField(
+      controller: _email,
       decoration: const InputDecoration(hintText: 'Enter Email')
           .applyDefaults(Theme.of(context).inputDecorationTheme),
     );
@@ -68,6 +102,7 @@ class SignupPage extends StatelessWidget {
 
   Widget _passwordField(BuildContext context) {
     return TextField(
+      controller: _password,
       decoration: const InputDecoration(hintText: 'Password')
           .applyDefaults(Theme.of(context).inputDecorationTheme),
     );
@@ -75,7 +110,7 @@ class SignupPage extends StatelessWidget {
 
   Widget _signinText(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         vertical: 30,
       ),
       child: Row(
@@ -88,7 +123,16 @@ class SignupPage extends StatelessWidget {
               fontSize: 14,
             ),
           ),
-          TextButton(onPressed: () {}, child: Text('Register Now'))
+          TextButton(
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => SigninPage(),
+                  ),
+                );
+              },
+              child: const Text('Sign In'))
         ],
       ),
     );
