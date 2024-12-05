@@ -5,7 +5,6 @@ import 'package:musicjoy/common/widgets/button/basic_app_button.dart';
 import 'package:musicjoy/core/configs/assets/app_vectors.dart';
 import 'package:musicjoy/data/models/auth/signin_user_req.dart';
 import 'package:musicjoy/domain/usecases/auth/signin.dart';
-import 'package:musicjoy/presentation/auth/pages/signup.dart';
 import 'package:musicjoy/presentation/root/pages/root.dart';
 import 'package:musicjoy/service_locator.dart';
 

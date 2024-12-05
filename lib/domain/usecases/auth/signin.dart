@@ -1,5 +1,4 @@
 import 'package:musicjoy/core/usecase/usecase.dart';
-import 'package:musicjoy/data/models/auth/create_user_req.dart';
 import 'package:dartz/dartz.dart';
 import 'package:musicjoy/data/models/auth/signin_user_req.dart';
 import 'package:musicjoy/domain/repository/auth/auth.dart';

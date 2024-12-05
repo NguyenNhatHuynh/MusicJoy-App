@@ -7,8 +7,8 @@ import '../../../service_locator.dart';
 
 class AuthRepositoryImpl extends AuthRepository {
   @override
-  Future<Either> signin(SigninUserReq sigininUserReq) async {
-    return await sl<AuthFirebaseService>().signin(sigininUserReq);
+  Future<Either> signin(SigninUserReq siginUserReq) async {
+    return await sl<AuthFirebaseService>().signin(siginUserReq);
   }
 
   @override
