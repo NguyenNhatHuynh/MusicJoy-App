@@ -23,6 +23,8 @@ dependencies:
   dartz:
   cloud_firestore:
   just_audio:
+  flutter_dotenv: ^5.0.2
+  supabase_flutter: ^0.2.5
 
 dev_dependencies:
   flutter_test:
@@ -37,6 +39,7 @@ flutter:
     - assets/fonts/
     - assets/images/
     - assets/vectors/
+    - assets/.env
 
   fonts:
     - family: Satoshi
